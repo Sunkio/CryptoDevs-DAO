@@ -4,9 +4,9 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import {
-  CRYPTODEVS_DAO_ABI,
+  CRYPTODEVS_DAO_ABI, CRYPTODEVS_DAO_CONTRACT_ABI,
   CRYPTODEVS_DAO_CONTRACT_ADDRESS,
-  CRYPTODEVS_NFT_ABI,
+  CRYPTODEVS_NFT_ABI, CRYPTODEVS_NFT_CONTRACT_ABI,
   CRYPTODEVS_NFT_CONTRACT_ADDRESS,
 } from "../constants";
 import styles from "../styles/Home.module.css";
@@ -233,7 +233,7 @@ export default function Home() {
   const getDaoContractInstance = (providerOrSigner) => {
     return new Contract(
         CRYPTODEVS_DAO_CONTRACT_ADDRESS,
-        CRYPTODEVS_DAO_ABI,
+        CRYPTODEVS_DAO_CONTRACT_ABI,
         providerOrSigner
     );
   };
@@ -243,7 +243,7 @@ export default function Home() {
   const getCryptodevsNFTContractInstance = (providerOrSigner) => {
     return new Contract(
         CRYPTODEVS_NFT_CONTRACT_ADDRESS,
-        CRYPTODEVS_NFT_ABI,
+        CRYPTODEVS_NFT_CONTRACT_ABI,
         providerOrSigner
     );
   };
@@ -426,7 +426,7 @@ export default function Home() {
             }
           </div>
           <div>
-            <img className={styles.image} src="/cryptodevs/0.svg" />
+            <img className={styles.image} src="../0.svg" />
           </div>
         </div>
 
